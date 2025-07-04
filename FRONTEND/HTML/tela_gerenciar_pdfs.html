@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar PDFs</title>
+  <link rel="stylesheet" href="../CSS/tela_gerenciar_pdfs.css">
+  <script src="../JAVASCRIPT/tela_gerenciar_pdfs.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Gerenciar PDFs</h2>
+
+    <form id="form-upload">
+      <input type="file" name="arquivo" accept=".pdf" required>
+      <button type="submit">Enviar PDF</button>
+    </form>
+
+    <div class="mensagem" id="mensagem"></div>
+
+    <h3>PDFs Pendentes</h3>
+    <ul>
+      {% for arquivo in arquivos %}
+        <li>
+          {{ arquivo.name }}
+          <button onclick="excluirPdf('{{ arquivo.id }}')">Excluir</button>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <a href="/pendentes"><button>← Voltar para Pendentes</button></a>
+  </div>
+</body>
+</html>

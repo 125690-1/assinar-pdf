@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentos Assinados</title>
+  <link rel="stylesheet" href="../CSS/tela_assinados.css">
+  <script src="../JAVASCRIPT/tela_assinados.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Documentos Assinados</h1>
+
+    <a href="/pendentes"><button class="botao-navegar">Ver Pendentes</button></a>
+    <table>
+      <thead>
+        <tr>
+          <th>PDF</th>
+          <th>MRO</th>
+          <th>Data MRO</th>
+          <th>OPERAÇÃO</th>
+          <th>Data OPERAÇÃO</th>
+          <th>Abrir</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for arquivo in arquivos %}
+          <tr>
+            <td>{{ arquivo.nome_pdf }}</td>
+            <td>{{ arquivo.nome_mro or '-' }}</td>
+            <td>{{ arquivo.data_mro or '-' }}</td>
+            <td>{{ arquivo.nome_operacao or '-' }}</td>
+            <td>{{ arquivo.data_operacao or '-' }}</td>
+            <td><button onclick="abrirPdf('{{ arquivo.id }}')">Abrir</button></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

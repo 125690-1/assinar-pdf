@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar Usuários</title>
+  <link rel="stylesheet" href="../CSS/tela_gerenciar_usuarios.css">
+  <script src="../JAVASCRIPT/tela_gerenciar_usuarios.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Gerenciar Usuários</h1>
+
+    <form id="form-usuario">
+      <input type="hidden" id="id">
+      <input type="text" id="br" placeholder="BR" required>
+      <input type="text" id="nome" placeholder="Nome" required>
+      <input type="password" id="senha" placeholder="Senha" required>
+      <select id="tipo" required>
+        <option value="">Selecione o tipo</option>
+        <option value="MRO">MRO</option>
+        <option value="OPERAÇÃO">OPERAÇÃO</option>
+      </select>
+      <input type="file" id="imagem" accept="image/*">
+      <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>BR</th>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Assinatura</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-usuarios"></tbody>
+    </table>
+  </div>
+</body>
+</html>

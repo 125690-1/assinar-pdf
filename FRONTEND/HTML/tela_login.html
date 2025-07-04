@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Assinar PDF</title>
+  <link rel="stylesheet" href="../CSS/tela_login.css">
+  <script src="../JAVASCRIPT/tela_login.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form method="POST">
+      <label for="usuario">BR:</label>
+      <input type="text" id="usuario" name="usuario" maxlength="12" required value="BR0" oninput="formatarBR(this)" autocomplete="off">
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <button type="submit">Entrar</button>
+
+      {% if erro %}
+        <p class="erro">{{ erro }}</p>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>

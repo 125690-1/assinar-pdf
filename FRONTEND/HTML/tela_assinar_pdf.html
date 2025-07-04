@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Assinar PDF</title>
+  <link rel="stylesheet" href="../CSS/tela_assinar_pdf.css">
+  <script src="../JAVASCRIPT/tela_assinar_pdf.js" defer></script>
+</head>
+<body>
+  <!-- Botão exemplo para disparar o modal -->
+  <button class="btnAssinar" data-id="{{ id_pdf }}">Assinar este PDF</button>
+
+  <div class="overlay" id="modalAssinar" style="display: none;">
+    <div class="modal">
+      <button id="btnFecharModal" class="fechar">×</button>
+      <h2>Assinatura de Documento</h2>
+
+      <!-- Visualizador do PDF -->
+      <iframe id="pdfViewer" width="100%" height="400px" style="margin-bottom: 15px;"></iframe>
+
+      <!-- Botão para carregar o PDF -->
+      <button id="btnAbrirPdf">Abrir PDF</button>
+
+      <!-- Campo para digitar a senha -->
+      <div style="margin-top: 15px;">
+        <input type="password" id="senhaAssinatura" placeholder="Digite sua senha" required>
+      </div>
+
+      <!-- Botão para confirmar assinatura -->
+      <button id="btnConfirmarAssinatura" style="margin-top: 10px;">Assinar</button>
+    </div>
+  </div>
+</body>
+</html>

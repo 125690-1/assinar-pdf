@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pendentes - Assinar PDF</title>
+  <link rel="stylesheet" href="../CSS/tela_pendentes.css">
+  <script src="../JAVASCRIPT/tela_pendentes.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>PDFs Pendentes</h2>
+
+    <a href="/assinados"><button class="botao-navegar">Ver Assinados</button></a>
+    <div id="lista-pdfs">
+      <!-- Aqui entraremos com os PDFs que o backend vai renderizar futuramente -->
+       <ul>
+            {% for pdf in arquivos %}
+                <li><a href="{{ pdf.link }}" target="_blank">{{ pdf.nome }}</a></li>
+            {% else %}
+                <li>Nenhum PDF pendente encontrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
+  </div>
+</body>
+</html>
