@@ -10,8 +10,8 @@ from BACKEND import tela_gerenciar_pdfs
 
 app = Flask(
     __name__,
-    template_folder='HTML',
-    static_folder='.'
+    template_folder='FRONTEND/HTML',
+    static_folder='FRONTEND'
 )
 
 # Chave da sessão
