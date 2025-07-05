@@ -33,5 +33,9 @@ app.register_blueprint(tela_gerenciar_usuarios.bp)
 app.register_blueprint(tela_gerenciar_pdfs.bp)
 app.register_blueprint(drive_service.bp)
 
+@app.route("/")
+def status():
+    return "🚀 Backend funcionando com sucesso!"
+
 if __name__ == '__main__':
     app.run(debug=True)
